@@ -81,8 +81,11 @@ class Module {
 ### 实现沙箱方案：
 
 `eval：`可以访问全局/闭包，但实际需要解释执行 ❌
+
 `new Function：`不可以访问闭包，可以访问全局，只编译一次 1 ✅
+
 `proxy：`可以拦截属性的获取，保证不能访问全局变量 2 ✅
+
 `with：`with 包裹的对象，会被放到原型链的顶部，而且是通过 in 操作符判断的；通过 with 塞入我们传入的数据对象 3 ✅
 
 ```js
@@ -95,7 +98,7 @@ class Module {
      * 
      * 
      * 
-     * @param {*} code 代码字符串
+     * @param {string} code 代码字符串
      */
 
     $runInThisContext = (code, whiteList=['console']) => {
