@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <script type="module">
+        function ajax(url, onSuccess, onFailed) {
+            // 1. 创建xhr
+            const xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            // 2. 连接服务器
+            xhr.open('get', url, true);
+            // 3. 发送
+            xhr.send();
+            // 4. 默认带上cookie
+            xhr.withCredentials = true;
+            // 5. 接收
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4) {
+                    if(xhr.status == 200) {
+                        onSuccess && onSuccess(xhr.responseText)
+                    } else {
+                        onFailed && onFailed(xhr);
+                    }
+                }
+            }
+        }
+
+        let cc = null;
+
+        const mitt = {
+            cache: {},
+            on(name, func) {
+                this.cache[name] = func;
+            },
+            emit(name, data) {
+                const fn = this.cache[name];
+                fn && fn(data);
+            }
+        }
+
+        function adaptor(config) {
+            return new Promise((resolve, reject) => {
+                let xhr = new XMLHttpRequest();
+                xhr.open(
+                    config.method.toUpperCase(),
+                    config.url,
+                    true
+                );
+
+                xhr.send();
+                xhr.timeout = config.timeout;
+                xhr.onabort = function() {
+                    reject('xhr is abort');
+                    xhr = null;
+                }
+
+                if(config.cancle) {
+                    mitt.emit('abort', function onCancel() {
+                        request.abort();
+                        request = null;
+                        reject('【abort】current request is abort.')
+                    })
+                }
+
+                xhr.onreadystatechange = function() {
+                    if(xhr.readyState === 4) {
+                        if(xhr.status === 200) {
+                            resolve(xhr && xhr.responseText);
+                        } else {
+                            reject('xhr error')
+                        }
+                    }
+                }
+
+            })
+        }
+
+        function dispatchRequest(config) {
+            return adaptor(config).then(function(response) {
+                return response;
+            }, function(reason) {
+                return Promise.reject(reason);
+            })
+        }
+
+
+        function req(config = {}) {
+            // 构建处理request数组
+            const chain = [dispatchRequest, undefined];
+
+            // 如果有请求拦截器
+            if(config.interceptor) {
+                chain.unshift(
+                    config.interceptor.fulfilled,
+                    config.interceptor.rejected
+                )
+            }
+
+            if(config.cancle) {
+                mitt.on('abort', function (cancel) {
+                    config.cancel(cancel);
+                })
+            }
+
+            // 如果有相应拦截器
+            if(config.adaptor) {
+                chain.push(
+                    config.adaptor.fulfilled,
+                    config.adaptor.rejected
+                )
+            }
+
+            let promise = Promise.resolve(config);
+
+            while(chain.length) {
+                promise = promise.then(chain.shift(), chain.shift());
+            }
+
+            return promise;
+        }
+    </script>
+</body>
+</html>
