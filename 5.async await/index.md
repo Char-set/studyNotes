@@ -83,3 +83,139 @@
     a.next() // {value: 9, done: false}
     a.next() // {value: undefined, done: true}
 ```
+
+这个生成器函数 加上 `yield` 是不是和 `async await` 很像？、
+
+这里还需要处理一下参数传递的问题，下面这个例子
+
+```js
+    const sleep = (str) => new Promise(r => setTimeout(() => r(str), 1000));
+
+    function * generatorFunc() {
+        console.log('------------ in -------------');
+        const res1 = yield sleep('hello Javascript');
+        console.log('------------ first result ---------', res1);
+        const res2 = yield sleep('hello Python');
+        console.log('------------ second result ---------', res2);
+        return 'success';
+    }
+
+    const gen = generatorFunc();
+
+    const r = gen.next('第一次运行参数');
+
+    console.log(1, r);
+
+    const e = gen.next('第二次运行参数');
+
+    console.log(1, e);
+
+    const s = gen.next('第三次运行参数');
+
+    console.log(1, s);
+
+    // 得到输出如下：
+    // ------------ in -------------
+    // 1 { value: Promise { <pending> }, done: false }
+    // ------------ first result --------- 第二次运行参数
+    // 1 { value: Promise { <pending> }, done: false }
+    // ------------ second result --------- 第三次运行参数
+    // 1 { value: 'success', done: true }
+```
+
+可以看到，`next` 函数第一次执行的参数，其实没有任何作用；而之后的每个 `next` 函数运行参数，会作为上一次结果返回
+
+所以，`async await` 其实就是语法糖，它的底层就是 `Generator` 生成器
+
+`注意问题：` 生成器函数是需要手动触发的 xxx.next()，但需要他是自动执行的
+
+上述代码，如果我们手动将整个流程执行完毕，会需要这么写
+
+```js
+    // 手动执行方案
+    const gen = generatorFunc();
+
+    const p = gen.next();
+
+    p.value.then(v1 => {
+        const g1 = gen.next(v1);
+        console.log('这里拿到的参数 v1 是：', v1);
+
+        g1.value.then(v2 => {
+            const g2 = gen.next(v2);
+            console.log('这里拿到的参数 v2 是：', v2);
+
+            console.log('这里拿到的参数 v3 是：', g2.value);
+        })
+    }); 
+```
+
+## 包装生成器，自动执行
+
+依据上面的流程，其实可以包装生成器函数，返回一个可以自动执行的 Promise 函数
+
+```js
+    const sleep = (str) => new Promise(r => setTimeout(() => r(str), 1000));
+
+    function * generatorFunc() {
+        console.log('------------ in -------------');
+        const res1 = yield sleep('hello Javascript');
+        console.log('------------ first result ---------', res1);
+        const res2 = yield sleep('hello Python');
+        console.log('------------ second result ---------', res2);
+        return 'success';
+    }
+
+    // ----------------------------- 封装分割线 -----------------------------------
+
+    // 执行迭代器的next或者throw方法
+    function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+        try {
+            var result = gen[key](arg);
+            var value = result.value;
+        } catch (e) {
+            reject(e);
+            return;
+        }
+
+        // 迭代器如果执行完成，会拥有done属性
+        if(result.done) {
+            resolve(value);
+        } else {
+            // 否则，当作Promise处理，在then回调后，继续执行 迭代器的 next 或者 throw 方法
+            Promise.resolve(value).then(_next, _throw) 
+        }
+    }
+
+    // 包装生成器函数，返回 Promise 函数
+    function asyncToGenerator(fn) {
+        return function() {
+            // 储存执行的上下文
+            var self = this, args = arguments;
+            // async 最终返回的是一个 Promise
+            return new Promise((resolve, reject) => {
+                // 先执行，得到迭代器 gen
+                var gen = fn.apply(self, args);
+
+                // 迭代器 应该有用两个方法 next 和 throw
+
+                // 提取next函数
+                function _next(value) {
+                    asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'next', value);
+                }
+                // 提取throw函数
+                function _throw(value) {
+                    asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'throw', value);
+                }
+                // 第一次启动next
+                _next()
+            })
+        }
+    }
+
+    // ----------------------------- 封装分割线 -----------------------------------
+
+    // 执行
+    asyncToGenerator(generatorFunc)()
+```
+
