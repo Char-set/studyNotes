@@ -1,1 +1,117 @@
-<mxfile host="app.diagrams.net" modified="2021-11-02T02:23:51.943Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" version="15.6.5" etag="XkPcNhTUDoL3LEVld4ZL" type="github"><diagram id="sG5X7FjF3BGRzyB1uHQa">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-11-02T02:37:37.912Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="qANqzGCsKsZPyr8mBWvl" version="15.6.5" type="github">
+  <diagram id="sG5X7FjF3BGRzyB1uHQa" name="第 1 页">
+    <mxGraphModel dx="1542" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="onWissAV-Oo47wetuUlc-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;strokeColor=default;labelBackgroundColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-3" target="onWissAV-Oo47wetuUlc-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-2" value="跳转" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=default;" vertex="1" connectable="0" parent="onWissAV-Oo47wetuUlc-1">
+          <mxGeometry x="-0.175" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-3" value="https://web-example.com" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="570" y="170" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-5" value="/page1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="615" y="260" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=default;strokeColor=#d79b00;labelBackgroundColor=default;fillColor=#ffe6cc;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-28" target="onWissAV-Oo47wetuUlc-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-31" value="开发者调用&lt;br&gt;pushState、replaceState" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=default;" vertex="1" connectable="0" parent="onWissAV-Oo47wetuUlc-30">
+          <mxGeometry x="-0.28" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;fontColor=default;strokeColor=#d79b00;fillColor=#ffe6cc;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-28" target="onWissAV-Oo47wetuUlc-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-35" value="浏览器按钮&lt;br&gt;history.（back、go）" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="onWissAV-Oo47wetuUlc-33">
+          <mxGeometry x="0.4983" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-28" target="onWissAV-Oo47wetuUlc-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-38" value="刷新页面、链接直接跳转" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="onWissAV-Oo47wetuUlc-37">
+          <mxGeometry x="0.7079" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-28" value="跳转类型" style="rhombus;whiteSpace=wrap;html=1;fontColor=default;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="645" y="340" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-29" target="onWissAV-Oo47wetuUlc-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-29" value="浏览器不会向服务器发起请求" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="615" y="520" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-32" target="onWissAV-Oo47wetuUlc-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-32" value="触发popstate事件" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="420" y="520" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-36" target="onWissAV-Oo47wetuUlc-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-36" value="会向浏览器发起请求&lt;br&gt;触发onload事件" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;strokeColor=default;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="830" y="520" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-41" target="onWissAV-Oo47wetuUlc-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-41" value="解析当前的url" style="rounded=0;whiteSpace=wrap;html=1;fontColor=default;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="615" y="630" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-42" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-45" target="onWissAV-Oo47wetuUlc-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;fontColor=default;strokeColor=default;" edge="1" parent="1" source="onWissAV-Oo47wetuUlc-45" target="onWissAV-Oo47wetuUlc-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-44" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="onWissAV-Oo47wetuUlc-43">
+          <mxGeometry x="0.0769" y="3" relative="1" as="geometry">
+            <mxPoint x="-3" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-45" value="匹配成功" style="rhombus;whiteSpace=wrap;html=1;fontColor=default;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="645" y="730" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-46" value="根据不同规则，展示页面" style="rounded=0;whiteSpace=wrap;html=1;fontColor=default;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="475" y="890" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-47" value="做错误处理&lt;br&gt;重定向或者提示路径不存在" style="rounded=0;whiteSpace=wrap;html=1;fontColor=default;strokeColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="755" y="890" width="155" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-49" value="这边如果nginx不做相应配置的话&lt;br&gt;nginx会直接去查找对应路径下的/page1资源&lt;br&gt;但其实需要重定向到 路径下的 index.html&lt;br&gt;所有在history的路由模式下&lt;br&gt;nginx会多一个配置项&lt;br&gt;try_files $uri $uri/ /index.html;&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#b85450;fillColor=#f8cecc;fontColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="320" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="onWissAV-Oo47wetuUlc-51" value="" style="curved=1;endArrow=classic;html=1;rounded=0;labelBackgroundColor=default;fontColor=default;strokeColor=default;entryX=0.504;entryY=-0.056;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="onWissAV-Oo47wetuUlc-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="420" as="sourcePoint" />
+            <mxPoint x="1100" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1100" y="510" />
+              <mxPoint x="880" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
