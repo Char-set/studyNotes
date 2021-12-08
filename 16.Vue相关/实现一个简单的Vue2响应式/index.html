@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单版本Vue</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            min-height: 100vh;
+            background-color: #e5e5e5;
+        }
+        .showClass{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="text">等待初始化</div>
+        <div class="">{{name}}</div>
+        <div class="">{{age}}</div>
+        <input type="text" v-model="inputVal">
+
+        <div class="showClass" style="display: inline-block;color: red;" v-show="show">显示隐藏</div>
+    </div>
+    <script>
+        window.log = console.log;
+    </script>
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
