@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { connect } from "./store/react-redux";
+// import { BrowserRouter, Switch, Route,  } from "react-router-dom";
+
+import { BrowserRouter, Route } from "../../../路由/react-router-dom";
+
+import Page1 from './pages/page1';
+import Page2 from './pages/page2';
+import Page3 from './pages/page3';
+
 function App({count, dispatch}) {
 
     const changeCount = () => {
@@ -9,39 +17,16 @@ function App({count, dispatch}) {
     }
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Hello Vite + React!</p>
-                <p>
-                    <button type="button" onClick={() => changeCount()}>
-                        count is: {count}
-                    </button>
-                </p>
-                <p>
-                    Edit <code>App.jsx</code> and save to test HMR updates.
-                </p>
-                <p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                    {' | '}
-                    <a
-                        className="App-link"
-                        href="https://vitejs.dev/guide/features.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Vite Docs
-                    </a>
-                </p>
-            </header>
-        </div>
+        // <div></div>
+        <BrowserRouter>
+            <div className="App">
+                {/* <Switch> */}
+                    <Route exact path="/" component={(Page1)}></Route>
+                    <Route exact path="/page2" component={Page2}></Route>
+                    <Route exact path="/page3" component={Page3}></Route>
+                {/* </Switch> */}
+            </div>
+        </BrowserRouter>
     )
 }
 

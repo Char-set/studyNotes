@@ -40,3 +40,10 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.page{
+    width: 300px;
+    height: 300px;
+    background-color: #ccc;
+    margin: 200px auto 0;
+}
