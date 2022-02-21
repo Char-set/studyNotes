@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { connect } from "./store/react-redux";
-// import { BrowserRouter, Switch, Route,  } from "react-router-dom";
+import { BrowserRouter, Switch, Route,  } from "react-router-dom";
 
-import { BrowserRouter, Route } from "../../../路由/react-router-dom";
+// import { BrowserRouter, Route } from "../../../路由/react-router-dom";
 
 import Page1 from './pages/page1';
 import Page2 from './pages/page2';

@@ -33,17 +33,17 @@ import { createStore } from "redux";
 
 // }
 
-const state = {
+const initState = {
     count: 0
 };
 
-const reducer = function(initState = state, action) {
+const reducer = function(state = initState, action) {
     switch (action.type) {
         case 'ADD':
-            return {count: initState.count + 1}
+            return {count: state.count + 1}
     
         default:
-            return initState
+            return state
     }
 }
 
